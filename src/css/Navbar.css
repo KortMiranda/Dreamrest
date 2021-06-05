@@ -1,0 +1,83 @@
+.nav-logo {
+    display: flex;
+    align-items: center;
+    font-size: .85rem;
+    padding-right: 10px;
+    text-decoration: none;
+    color: var(--mainRed)
+}
+
+.nav-logo:hover {
+    color: var(--mainBlack);
+    background-color: var(--mainGreen);
+    border-radius: 10px;
+}
+
+.logo {
+    height: 3rem;
+    margin: 0 0.5rem 0 0;
+    width: auto;
+}
+
+.navbar{
+    width: 100%;
+    height: 3rem;
+    display: flex;
+    align-items: center;
+}
+
+.nav-center{
+    display: flex;
+    align-items: center;
+    width: var(--smallWidth);
+    margin: 0 auto;
+    max-width: var(--fullWidth);
+}
+
+.nav-links{
+    display: flex;
+    align-items: center;
+    list-style-type: none;
+}
+
+.nav-links a {
+    display: inline-block;
+    color: var(--mainBlack);
+    font-weight: bold;
+    margin-right: 0.5rem;
+    font-weight: 400;
+    letter-spacing: 1.5px;
+    font-size: .85rem;
+    padding: 0.25rem 0.5rem;
+    text-decoration: none;
+}
+
+.nav-links a:hover {
+    background: var(--mainGreen);
+    border-radius: 10px;
+}
+
+.add-card-button {
+  /* display: flex;
+  align-items: cente; */
+  width: 28px;
+  /* line-height: 23px; */
+  height: 28px;
+  color: var(--mainBlack);
+  background-color: var(--mainRed);
+  border: solid 1px var(--mainBlack);
+  border-radius: 10px;
+  font-size: 20px;
+  justify-content: center;
+}
+
+.add-card-button:hover {
+    background-color: transparent;
+    border-style: none;
+}
+
+/* .plus {
+    line-height: 23px;
+    font-size: 20px;
+  } */
+

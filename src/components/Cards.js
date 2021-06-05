@@ -1,6 +1,6 @@
 import React, { useEffect, useState } from 'react';
 import axios from 'axios'
-import '../Card.css'
+import '../css/Card.css'
 import Masonry from 'react-masonry-css'
 
 function Cards(props) {
