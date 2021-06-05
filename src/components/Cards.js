@@ -1,5 +1,7 @@
 import React, { useEffect, useState } from 'react';
 import axios from 'axios'
+import '../Card.css'
+import Masonry from 'react-masonry-css'
 
 function Cards(props) {
     const [cards, setCards] = useState([])
@@ -16,23 +18,27 @@ function Cards(props) {
         getCard()
     }, [])
     return (
-        <div>
+        <Masonry
+            breakpointCols={3}
+            className="my-masonry-grid"
+            columnClassName="my-masonry-grid_column">
+        {/* <div> */}
            {cards.map((card) => {
                return(
-                   <div className="card-display-all">
+                //    <div className="card-display-all">
                        <ul>
-                        <li className="card-list">
-                            <h4>{card.title}</h4>
+                        <li className="card-item">
                             <img src={card.img_url} alt={card.title}/>
-                            <p>{card.description}</p>
+                            <h4>{card.title}</h4>
                         </li>
                         </ul>
-                   </div>
+                //    </div>
                    
                    
                )
            })}
-        </div>
+        {/* </div> */}
+        </Masonry>
     );
 }
 
