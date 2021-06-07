@@ -8,6 +8,7 @@ function AddCard(props) {
     const [desc, setDesc] = useState()
     const [img, setImg] = useState()
     const [ref, setRef] = useState()
+    const [errors, setErrors] = useState(false);
 
     const handleSubmit = e => {
         e.preventDefault()
@@ -21,6 +22,7 @@ function AddCard(props) {
         .then(res => {
             setAddCard(res.data)
             console.log(res.data)
+            window.location.replace('http://localhost:3000/');
         })
     }
 

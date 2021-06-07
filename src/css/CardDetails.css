@@ -1,0 +1,9 @@
+.card-details-container {
+    margin: auto;
+    display: flex;
+    width: 1016px;
+}
+
+.card-details-container img {
+    width: 350px;
+}

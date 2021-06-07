@@ -5,6 +5,7 @@ import Signup from './views/auth/Signup'
 import Logout from './views/auth/Logout'
 import Dashboard from './app/Dashboard'
 import AddCard from './components/AddCard'
+import CardDetails from './components/CardDetails'
 
 function App() {
   return (
@@ -16,6 +17,7 @@ function App() {
       <Route exact path="/signup" component={Signup} />
       <Route exact path="/logout" component={Logout} />
       <Route exact path="/dream-builder" component={AddCard} />
+      <Route exact path="/card/:id" component={CardDetails} />
       </Switch>
     </div>
   );

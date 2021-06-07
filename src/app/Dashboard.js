@@ -1,7 +1,9 @@
 import React, { useEffect, useState, Fragment } from 'react';
+import { Link } from 'react-router-dom'
 import axios from 'axios'
 import '../css/Card.css'
 import Masonry from 'react-masonry-css'
+import Likes from '../components/Likes'
 
 function Cards() {
     const [username, setUsername] = useState('');
@@ -41,12 +43,11 @@ function Cards() {
         <div>
       {loading === false && (
         <Fragment>
-          <h1>Dashboard</h1>
           <h2>Hello {username}!</h2>
         </Fragment>
       )}
         <Masonry
-            breakpointCols={3}
+            breakpointCols={4}
             className="my-masonry-grid"
             columnClassName="my-masonry-grid_column">
         {/* <div> */}
@@ -54,10 +55,13 @@ function Cards() {
                return(
                 //    <div className="card-display-all">
                        <ul>
+                        <Link to={`card/${card.id}`} key={card.id}>
                         <li className="card-item">
                             <img src={card.img_url} alt={card.title}/>
                             <h4>{card.title}</h4>
                         </li>
+                        </Link>
+                        <Likes />
                         </ul>
                 //    </div> 
                )
