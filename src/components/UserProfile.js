@@ -20,11 +20,11 @@ function UserProfile() {
                 const profile = res.data
                 setUserProfile(profile)
                 console.log(profile)
-                console.log(profile.cards[0])
                 if(profile) {
                     const {
                         profile_image,
                         followers_count,
+                        following_count,
                         name,
                         bio,
                         cards,
@@ -32,6 +32,7 @@ function UserProfile() {
                     const profileView = {
                         profile_image,
                         followers_count,
+                        following_count,
                         name,
                         bio,
                         cards
@@ -55,6 +56,7 @@ function UserProfile() {
         const {
             profile_image,
             followers_count,
+            following_count,
             name,
             bio,
             cards
@@ -66,10 +68,17 @@ function UserProfile() {
                 <img src={profile_image} alt={name}/>
                 <h2>{name}</h2>
                 <p>{bio}</p>
+                <div className="follows">
+                <div className="the-following">
                 <p>followers {followers_count}</p>
+                </div>
+                <div className="the-following">
+                <p>following {following_count}</p>
+                </div>
+                </div>
             </div>
             <Masonry
-            breakpointCols={3}
+            breakpointCols={4}
             className="my-masonry-grid"
             columnClassName="my-masonry-grid_column">
                 {cards.map((card) => {

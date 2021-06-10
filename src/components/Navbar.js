@@ -1,15 +1,24 @@
 import React, { useState, useEffect, Fragment} from 'react';
 import { Link } from "react-router-dom"
+import PropTypes from 'prop-types'
 import '../css/Navbar.css'
 
-function Navbar() {
-    const [isAuth, setIsAuth] = useState(false);
-
-    useEffect(() => {
-      if (localStorage.getItem('token') !== null) {
-        setIsAuth(true);
-      }
-    }, []);
+function Navbar(props) {
+    // const logged_out_nav = (
+    //     <ul>
+    //       <li onClick={() => props.display_form('login')}>login</li>
+    //       <li onClick={() => props.display_form('signup')}>signup</li>
+    //     </ul>
+    //   );
+    
+    //   const logged_in_nav = (
+    //     <ul>
+    //       <li onClick={props.handle_logout}>logout</li>
+    //     </ul>
+    //   );
+    //   return <div>{props.logged_in ? logged_in_nav : logged_out_nav}</div>;
+    // }
+   
     return (
        <nav className="navbar">
            <div className="nav-center">
@@ -17,8 +26,8 @@ function Navbar() {
                        <h1>Dreamrest</h1>
                </Link>
                <ul className="nav-links">
-                   {isAuth === true ? (
-                       <Fragment>
+                   {/* {isAuth === true ? ( */}
+                    {/* //    <Fragment> */}
                         <li>
                             <Link to="/dashboard">Home</Link>
                         </li>
@@ -28,21 +37,21 @@ function Navbar() {
                         <li>
                             <Link to="/my-cards/:id">My Profile</Link>
                         </li>
-                        <li>
+                        {/* <li>
                             <Link to='/logout'>Logout</Link>
-                        </li>
-                       </Fragment>
-                   ) : (
-                       <Fragment>
-                           {' '}
-                           <li>
-                                <Link to='/login'>Login</Link>
-                           </li>
-                           <li>
-                                <Link to='/signup'>Signup</Link>
-                            </li>
-                       </Fragment>
-                   )}   
+                        </li> */}
+                       {/* </Fragment> */}
+                {/* //    ) : (
+                //        <Fragment>
+                //            {' '}
+                //            <li>
+                //                 <Link to='/login'>Login</Link>
+                //            </li>
+                //            <li>
+                //                 <Link to='/signup'>Signup</Link>
+                //             </li>
+                //        </Fragment>
+                //    )}    */}
                </ul>
            </div>
        </nav>
@@ -50,3 +59,9 @@ function Navbar() {
 }
 
 export default Navbar;
+
+// Navbar.propTypes = {
+//     logged_in: PropTypes.bool.isRequired,
+//     display_form: PropTypes.func.isRequired,
+//     handle_logout: PropTypes.func.isRequired
+//   };

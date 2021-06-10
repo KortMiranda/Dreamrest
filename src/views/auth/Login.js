@@ -60,7 +60,7 @@ const Login = () => {
             onChange={e => setUsername(e.target.value)}
           />{' '}
           <br />
-          <label htmlFor='email'>Email address:</label> <br />
+          {/* <label htmlFor='email'>Email address:</label> <br />
           <input
             name='email'
             type='email'
@@ -68,7 +68,7 @@ const Login = () => {
             required
             onChange={e => setEmail(e.target.value)}
           />{' '}
-          <br />
+          <br /> */}
           <label htmlFor='password'>Password:</label> <br />
           <input
             name='password'

@@ -13,23 +13,23 @@ function Cards() {
     const [cards, setCards] = useState([])
 
     useEffect(() => {
-        if (localStorage.getItem('token') === null) {
-            window.location.replace('http://localhost:3000/login')
-          } else {
-            fetch('http://127.0.0.1:8000/api/v1/users/auth/user/', {
-              method: 'GET',
-              headers: {
-                'Content-Type': 'application/json',
-                Authorization: `Token ${localStorage.getItem('token')}`
-              }
-            })
-              .then(res => res.json())
-              .then(data => {
-                setUsername(data.username)
-                setUserEmail(data.email);
-                setLoading(false);
-              })
-          }
+        // if (localStorage.getItem('token') === null) {
+        //     window.location.replace('http://localhost:3000/login')
+        //   } else {
+        //     fetch('http://127.0.0.1:8000/api/v1/users/auth/user/', {
+        //       method: 'GET',
+        //       headers: {
+        //         'Content-Type': 'application/json',
+        //         Authorization: `Token ${localStorage.getItem('token')}`
+        //       }
+        //     })
+        //       .then(res => res.json())
+        //       .then(data => {
+        //         setUsername(data.username)
+        //         setUserEmail(data.email);
+        //         setLoading(false);
+        //       })
+        //   }
         function getCard() {
             axios.get('http://localhost:8000/cards')
             .then(res => {
@@ -42,11 +42,11 @@ function Cards() {
     }, [])
     return (
         <div>
-      {loading === false && (
+      {/* {loading === false && (
         <Fragment>
           <h2>Hello {username}!</h2>
         </Fragment>
-      )}
+      )} */}
         <Masonry
             breakpointCols={3}
             className="my-masonry-grid"

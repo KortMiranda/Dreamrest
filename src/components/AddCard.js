@@ -3,14 +3,12 @@ import { Link } from 'react-router-dom'
 import axios from 'axios';
 
 function AddCard(props) {
-    const [setAddCard] = useState()
+    const [addCard,setAddCard] = useState()
     const [title, setTitle] = useState()
     const [desc, setDesc] = useState()
     const [img, setImg] = useState()
     const [ref, setRef] = useState()
     // const [errors, setErrors] = useState(false);
-
-
 
     const handleSubmit = e => {
         e.preventDefault()
@@ -20,12 +18,13 @@ function AddCard(props) {
             description: desc,
             img_ref: ref,
         }
-        axios.post('http://localhost:8000/cards/', cardInfo)
+        axios.post('http://localhost:8000/create/', cardInfo)
         .then(res => {
             setAddCard(res.data)
             console.log(res.data)
             window.location.replace('http://localhost:3000/');
         })
+        .catch(console.error)
     }
 
     

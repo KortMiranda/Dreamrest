@@ -56,3 +56,8 @@ a {
   font-size:14px;
   display: flex;
 }
+
+.comment-form {
+  display:flex;
+  justify-content: space-between;
+}

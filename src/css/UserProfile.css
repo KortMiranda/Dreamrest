@@ -1,4 +1,5 @@
 .user-profile {
+    /* display: flex; */
     margin: auto;
     text-align: center;
 }
@@ -6,4 +7,13 @@
 .user-profile img{
     width: 150px;
     border-radius: 50%;
+}
+
+.follows {
+    display: flex;
+    justify-content: center;
+}
+
+.the-following {
+    margin: 1px 5px 10px 5px;
 }
