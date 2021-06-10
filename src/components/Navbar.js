@@ -26,6 +26,9 @@ function Navbar() {
                             <Link to="/dream-builder"><button className="add-card-button">&#x2b;</button></Link>
                         </li>
                         <li>
+                            <Link to="/my-cards/:id">My Profile</Link>
+                        </li>
+                        <li>
                             <Link to='/logout'>Logout</Link>
                         </li>
                        </Fragment>

@@ -3,7 +3,8 @@ import { Link } from 'react-router-dom'
 import axios from 'axios'
 import '../css/Card.css'
 import Masonry from 'react-masonry-css'
-import Likes from '../components/Likes'
+import { FontAwesomeIcon } from '@fortawesome/react-fontawesome'
+import { faHeart as farHeart } from '@fortawesome/free-regular-svg-icons'
 
 function Cards() {
     const [username, setUsername] = useState('');
@@ -30,7 +31,7 @@ function Cards() {
               })
           }
         function getCard() {
-            axios.get('http://localhost:8000/cards/')
+            axios.get('http://localhost:8000/cards')
             .then(res => {
                 setCards(res.data)
                 console.log(res.data)
@@ -47,7 +48,7 @@ function Cards() {
         </Fragment>
       )}
         <Masonry
-            breakpointCols={4}
+            breakpointCols={3}
             className="my-masonry-grid"
             columnClassName="my-masonry-grid_column">
         {/* <div> */}
@@ -61,7 +62,13 @@ function Cards() {
                             <h4>{card.title}</h4>
                         </li>
                         </Link>
-                        <Likes />
+                        <div className="total-likes">
+                        <button className="like-button"><FontAwesomeIcon icon={farHeart}/></button>
+                        <p>{card.like_counts}</p>
+                        </div>
+                          <Link to={`/user/${card.creator.id}`} key={card.creator.id} className="user-link">
+                            <h4>{card.creator.username}</h4>
+                          </Link>
                         </ul>
                 //    </div> 
                )

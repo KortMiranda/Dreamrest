@@ -1,0 +1,9 @@
+.user-profile {
+    margin: auto;
+    text-align: center;
+}
+
+.user-profile img{
+    width: 150px;
+    border-radius: 50%;
+}
