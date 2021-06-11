@@ -48,7 +48,7 @@ function Cards() {
         </Fragment>
       )}
         <Masonry
-            breakpointCols={3}
+            breakpointCols={4}
             className="my-masonry-grid"
             columnClassName="my-masonry-grid_column">
         {/* <div> */}

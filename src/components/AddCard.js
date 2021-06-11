@@ -21,13 +21,11 @@ function AddCard(props) {
         axios.post('http://localhost:8000/cards/', cardInfo)
         .then(res => {
             setAddCard(res.data)
-            console.log(res.data)
             window.location.replace('http://localhost:3000/');
         })
     }
 
     
-
     return (
         <div className="add-form">
             <form onSubmit={handleSubmit}>

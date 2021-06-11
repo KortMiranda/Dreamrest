@@ -32,8 +32,9 @@ function CardDetails(props) {
             </div>
             <div className="card-details-items">
             <DeleteButton />
+            <Link to={`/edit/${card.id}`}><button className="back-button">Edit Card</button></Link>
             <h2>{card.title}</h2>
-            <p>Posted {card.natural_time}</p>
+            {/* <p>Posted {card.natural_time}</p> */}
             {/* <h3>Uploaded by {card.creator.username}</h3> */}
             <p>{card.description}</p>
             <h4>{card.img_ref}</h4>   
