@@ -11,7 +11,7 @@ function CardDetails(props) {
     useEffect(() => {
         setLoading(true)
         function getCard() {
-            axios.get(`http://localhost:8000/${id}`)
+            axios.get(`http://localhost:8000/card/${id}`)
             .then(res => {
                 setCards(res.data)
                 console.log(res.data)
