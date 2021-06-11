@@ -66,9 +66,9 @@ function Cards() {
                         <button className="like-button"><FontAwesomeIcon icon={farHeart}/></button>
                         <p>{card.like_counts}</p>
                         </div>
-                          <Link to={`/user/${card.creator.id}`} key={card.creator.id} className="user-link">
+                          {/* <Link to={`/user/${card.creator.id}`} key={card.creator.id} className="user-link">
                             <h4>{card.creator.username}</h4>
-                          </Link>
+                          </Link> */}
                         </ul>
                 //    </div> 
                )

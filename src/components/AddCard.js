@@ -3,14 +3,12 @@ import { Link } from 'react-router-dom'
 import axios from 'axios';
 
 function AddCard(props) {
-    const [setAddCard] = useState()
+    const [addCard, setAddCard] = useState()
     const [title, setTitle] = useState()
     const [desc, setDesc] = useState()
     const [img, setImg] = useState()
     const [ref, setRef] = useState()
     // const [errors, setErrors] = useState(false);
-
-
 
     const handleSubmit = e => {
         e.preventDefault()
