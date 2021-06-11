@@ -1,6 +1,7 @@
 import React, { useState, useEffect} from 'react';
 import { useParams, Link } from 'react-router-dom'
 import axios from "axios"
+import DeleteButton from './DeleteButton'
 import '../css/CardDetails.css'
 
 function CardDetails(props) {
@@ -29,8 +30,8 @@ function CardDetails(props) {
             <div className="card-details-img">
             <img src={card.img_url} alt={card.title}/>
             </div>
-            {/* delete option will go here */}
             <div className="card-details-items">
+            <DeleteButton />
             <h2>{card.title}</h2>
             <p>Posted {card.natural_time}</p>
             {/* <h3>Uploaded by {card.creator.username}</h3> */}
