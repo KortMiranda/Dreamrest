@@ -11,6 +11,10 @@ function EditForm(props) {
     const [ref, setRef] = useState("")
     const { id } = useParams()
 
+    const backendURL = process.env.NODE_ENV === "production" ? 
+    process.env.REACT_APP_BACKENDURL:
+    "http://localhost:8000"
+
     useEffect(() => {
         function getCard() {
             axios.get(`http://localhost:8000/card/${id}`)
@@ -35,7 +39,7 @@ function EditForm(props) {
             img_url: img,
             img_ref: e.target.Image.value,
         }
-        axios.put(`http://localhost:8000/card/${id}`, cardInfo)
+        axios.put(`${backendURL}/card/${id}`, cardInfo)
         .then(res => {
             setCard(res.data)
             console.log(res.data)
