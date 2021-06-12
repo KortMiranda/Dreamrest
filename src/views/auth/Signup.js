@@ -1,9 +1,9 @@
 import React, { useState, useEffect } from 'react'
 
 const Signup = () => {
-  const backendURL = process.env.NODE_ENV === "production" ? 
-  process.env.REACT_APP_BACKENDURL:
-  "https://rocky-springs-66803.herokuapp.com"
+  // const backendURL = process.env.NODE_ENV === "production" ? 
+  // process.env.REACT_APP_BACKENDURL:
+  // "https://rocky-springs-66803.herokuapp.com"
   const [email, setEmail] = useState('')
   const [username, setUsername] = useState('')
   const [password1, setPassword1] = useState('')
@@ -13,7 +13,7 @@ const Signup = () => {
 
   useEffect(() => {
     if (localStorage.getItem('token') !== null) {
-      window.location.replace('http://dreamrest.herokuapp.com/');
+      window.location.replace('http://localhost:3000/');
     } else {
       setLoading(false);
     }
@@ -28,7 +28,7 @@ const Signup = () => {
       password2: password2
     };
 
-    fetch(`https://cors-anywhere.herokuapp.com/${backendURL}/api/v1/users/auth/register/`, {
+    fetch(`http:localhost:8000/api/v1/users/auth/register/`, {
       method: 'POST',
       headers: {
         'Content-Type': 'application/json'

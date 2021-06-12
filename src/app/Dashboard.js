@@ -17,9 +17,9 @@ function Cards() {
 
     useEffect(() => {
         if (localStorage.getItem('token') === null) {
-            window.location.replace('http://dreamrest.herokuapp.com/login')
+            window.location.replace('http://localhost:3000/login')
           } else {
-            fetch(`${process.env.REACT_APP_BACKEND_URL}/api/v1/users/auth/user/`, {
+            fetch(`http://localhost:8000/api/v1/users/auth/user/`, {
               method: 'GET',
               headers: {
                 'Content-Type': 'application/json',
@@ -34,7 +34,7 @@ function Cards() {
               })
           }
         function getCard() {
-            axios.get(`${process.env.REACT_APP_BACKEND_URL}/cards`)
+            axios.get(`http://localhost:8000/cards`)
             .then(res => {
                 setCards(res.data)
                 console.log(res.data)
@@ -42,6 +42,7 @@ function Cards() {
             .catch(console.error)
         }
         getCard()
+      
     }, [])
     return (
         <div>
@@ -80,6 +81,7 @@ function Cards() {
         </Masonry>
         </div>
     );
-}
+  }
+
 
 export default Cards;

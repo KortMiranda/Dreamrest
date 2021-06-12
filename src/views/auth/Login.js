@@ -12,7 +12,7 @@ const Login = () => {
 
   useEffect(() => {
     if (localStorage.getItem('token') !== null) {
-      window.location.replace('http://dreamrest.herokuapp.com/');
+      window.location.replace('http://localhost:3000');
     } else {
       setLoading(false);
     }
@@ -26,14 +26,21 @@ const Login = () => {
       password: password
     };
 
-    fetch(`https://rocky-springs-66803.herokuapp.com/api/v1/users/auth/login/`, {
+    // fetch(`https://rocky-springs-66803.herokuapp.com/api/v1/users/auth/login/`, {
+    //   method: 'POST',
+    //   headers: {
+    //     'Content-Type': 'application/json',
+    //     // "Access-Control-Allow-Headers": "*",
+    //     "Access-Control-Allow-Origin" : "*",
+    //     "Access-Control-Allow-Methods" : "GET,POST,PUT,DELETE,OPTIONS",
+    //     "Access-Control-Allow-Headers": "Content-Type, Access-Control-Allow-Headers, Authorization, X-Requested-With"
+    //   },
+    //   body: JSON.stringify(user)
+    // })
+    fetch(`http://localhost:8000/api/v1/users/auth/login/`, {
       method: 'POST',
       headers: {
         'Content-Type': 'application/json',
-        // "Access-Control-Allow-Headers": "*",
-        "Access-Control-Allow-Origin" : "*",
-        "Access-Control-Allow-Methods" : "GET,POST,PUT,DELETE,OPTIONS",
-        "Access-Control-Allow-Headers": "Content-Type, Access-Control-Allow-Headers, Authorization, X-Requested-With"
       },
       body: JSON.stringify(user)
     })
@@ -42,7 +49,7 @@ const Login = () => {
         if (data.key) {
           localStorage.clear();
           localStorage.setItem('token', data.key);
-          window.location.replace('http://dreamrest.herokuapp.com/');
+          window.location.replace('http://localhost:3000');
         } else {
           setEmail('');
           setPassword('');
