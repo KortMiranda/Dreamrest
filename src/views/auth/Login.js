@@ -1,9 +1,9 @@
 import React, { useState, useEffect } from 'react';
 
 const Login = () => {
-  // const backendURL = process.env.NODE_ENV === "production" ? 
-  // process.env.REACT_APP_BACKENDURL:
-  // "https://rocky-springs-66803.herokuapp.com"
+  const backendURL = process.env.NODE_ENV === "production" ? 
+  process.env.REACT_APP_BACKENDURL:
+  "https://rocky-springs-66803.herokuapp.com"
   const [username, setUsername] = useState('');
   const [email, setEmail] = useState('');
   const [password, setPassword] = useState('');
@@ -26,10 +26,11 @@ const Login = () => {
       password: password
     };
 
-    fetch(`${process.env.REACT_APP_BACKEND_URL}/api/v1/users/auth/login/`, {
+    fetch(`https://rocky-springs-66803.herokuapp.com/api/v1/users/auth/login/`, {
       method: 'POST',
       headers: {
-        'Content-Type': 'application/json'
+        'Content-Type': 'application/json',
+        "Access-Control-Allow-Origin": "*"
       },
       body: JSON.stringify(user)
     })

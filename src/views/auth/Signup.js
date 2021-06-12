@@ -28,7 +28,7 @@ const Signup = () => {
       password2: password2
     };
 
-    fetch(`${backendURL}/api/v1/users/auth/register/`, {
+    fetch(`https://cors-anywhere.herokuapp.com/${backendURL}/api/v1/users/auth/register/`, {
       method: 'POST',
       headers: {
         'Content-Type': 'application/json'
