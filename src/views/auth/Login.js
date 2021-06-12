@@ -1,9 +1,9 @@
 import React, { useState, useEffect } from 'react';
 
 const Login = () => {
-  // const backendURL = process.env.NODE_ENV === "production" ? 
-  // process.env.REACT_APP_BACKENDURL:
-  // "https://rocky-springs-66803.herokuapp.com"
+  const backendURL = process.env.NODE_ENV === "production" ? 
+  process.env.REACT_APP_BACKENDURL:
+  "https://rocky-springs-66803.herokuapp.com"
   const [username, setUsername] = useState('');
   const [email, setEmail] = useState('');
   const [password, setPassword] = useState('');
