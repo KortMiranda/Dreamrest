@@ -7,9 +7,9 @@ import { FontAwesomeIcon } from '@fortawesome/react-fontawesome'
 import { faHeart as farHeart } from '@fortawesome/free-regular-svg-icons'
 
 function Cards() {
-  const backendURL = process.env.NODE_ENV === "production" ? 
-  process.env.REACT_APP_BACKENDURL:
-  "http://localhost:8000"
+  // const backendURL = process.env.NODE_ENV === "production" ? 
+  // process.env.REACT_APP_BACKENDURL:
+  // "https://rocky-springs-66803.herokuapp.com"
     const [username, setUsername] = useState('');
     const [userEmail, setUserEmail] = useState('');
     const [loading, setLoading] = useState(true);
@@ -19,7 +19,7 @@ function Cards() {
         if (localStorage.getItem('token') === null) {
             window.location.replace('http://dreamrest.herokuapp.com/login')
           } else {
-            fetch(`${backendURL}/api/v1/users/auth/user/`, {
+            fetch(`${process.env.REACT_APP_BACKEND_URL}/api/v1/users/auth/user/`, {
               method: 'GET',
               headers: {
                 'Content-Type': 'application/json',
@@ -34,7 +34,7 @@ function Cards() {
               })
           }
         function getCard() {
-            axios.get(`${backendURL}/cards`)
+            axios.get(`${process.env.REACT_APP_BACKEND_URL}/cards`)
             .then(res => {
                 setCards(res.data)
                 console.log(res.data)
