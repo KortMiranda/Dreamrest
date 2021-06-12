@@ -29,8 +29,8 @@ const Login = () => {
     fetch(`https://rocky-springs-66803.herokuapp.com/api/v1/users/auth/login/`, {
       method: 'POST',
       headers: {
-        'Content-Type': 'application/json'
-        // "Access-Control-Allow-Origin": "*"
+        'Content-Type': 'application/json',
+        "Access-Control-Allow-Headers": "*"
       },
       body: JSON.stringify(user)
     })
