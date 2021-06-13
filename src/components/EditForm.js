@@ -11,10 +11,6 @@ function EditForm(props) {
     const [ref, setRef] = useState("")
     const { id } = useParams()
 
-    // const backendURL = process.env.NODE_ENV === "production" ? 
-    // process.env.REACT_APP_BACKENDURL:
-    // "http://localhost:8000"
-
     useEffect(() => {
         function getCard() {
             axios.get(`http://localhost:8000/card/${id}`)
