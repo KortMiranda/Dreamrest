@@ -11,9 +11,9 @@ function EditForm(props) {
     const [ref, setRef] = useState("")
     const { id } = useParams()
 
-    const backendURL = process.env.NODE_ENV === "production" ? 
-    process.env.REACT_APP_BACKENDURL:
-    "http://localhost:8000"
+    // const backendURL = process.env.NODE_ENV === "production" ? 
+    // process.env.REACT_APP_BACKENDURL:
+    // "http://localhost:8000"
 
     useEffect(() => {
         function getCard() {
@@ -39,34 +39,40 @@ function EditForm(props) {
             img_url: img,
             img_ref: e.target.Image.value,
         }
-        axios.put(`${backendURL}/card/${id}`, cardInfo)
+        axios.put(`http://localhost:8000/card/${id}`, cardInfo)
         .then(res => {
             setCard(res.data)
             console.log(res.data)
-            // setTitle('')
-            // setDesc('')
-            // setRef('')
-            window.location.replace('http://localhost:3000/');
+            window.location.replace(`http://localhost:3000/card/${id}`);
         })
         .catch(console.error)
     }
   
     return (
-
-        <div className="add-form">
-            <form onSubmit={handleSubmit}>
-                <input type="text" name="Title" value={title} onChange={e => setTitle(e.target.value)} />
-                <br />
-                <br />
-                <input type="text" name="Description" value={desc} onChange={e => setDesc(e.target.value)} />
-                <br />
-                <br />
-                <input type="text" name="Image" value={img} onChange={e => setRef(e.target.value)} />
-                <br />
-                <button type= "submit" className="submit-button">Save</button>
-                {/* <Link to={`/card/${card.id}`}><button className="back-button">Cancel</button></Link> */}
-
-            </form>
+        <div className="edit-form-container">
+            <div className="edit-form">
+                <div className="edit-layout">
+                    <div className="display-image">
+                    <img src={img} alt={title}/>
+                    </div>
+                <div className="edit-details">
+                    <h3>Edit Card</h3>
+                    <br />
+                <form onSubmit={handleSubmit}>
+                    <input type="text" name="Title" value={title} onChange={e => setTitle(e.target.value)} />
+                    <br />
+                    <br />
+                    <input type="text" name="Description" value={desc} onChange={e => setDesc(e.target.value)} />
+                    <br />
+                    <br />
+                    <input type="text" name="Image" value={img} onChange={e => setRef(e.target.value)} />
+                    <br />
+                    <button type= "submit" className="submit-button">Save</button>
+                    <Link to={`/card/${id}`}><button>Cancel</button></Link>   
+                </form>
+                </div>
+                </div>
+            </div>
         </div>
     );
 }

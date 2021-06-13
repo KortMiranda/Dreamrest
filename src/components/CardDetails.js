@@ -1,8 +1,9 @@
-import React, { useState, useEffect} from 'react';
+import React, { useState, useEffect, Fragment} from 'react';
 import { useParams, Link } from 'react-router-dom'
 import axios from "axios"
 import DeleteButton from './DeleteButton'
 import '../css/CardDetails.css'
+import BackButton from './BackButton'
 
 function CardDetails(props) {
     const [loading, setLoading] = useState(false)
@@ -22,28 +23,28 @@ function CardDetails(props) {
         setLoading(false)
         getCard()
     }, [id])
-    
-    if(card){
-        // if card return this if not return loading please wait
+           
     return (
+        <div>
+            <BackButton />
         <div className="card-details-container">
-            <div className="card-details-img">
-            <img src={card.img_url} alt={card.title}/>
-            </div>
-            <div className="card-details-items">
-            <DeleteButton />
-            <Link to={`/edit/${card.id}`}><button className="back-button">Edit Card</button></Link>
-            <h2>{card.title}</h2>
-            {/* <p>Posted {card.natural_time}</p> */}
-            {/* <h3>Uploaded by {card.creator.username}</h3> */}
-            <p>{card.description}</p>
-            <h4>{card.img_ref}</h4>   
-            </div>
+        <div className="card-details-img">
+        <img src={card.img_url} alt={card.title}/>
+        </div>
+        <div className="card-details">
+        <div className="card-details-buttons">
+        <DeleteButton />
+        <Link to={`/edit/${card.id}`}><button>Edit Card</button></Link>
+        </div>
+        <div className="card-details-items">
+        <h2>{card.title}</h2>
+        <p>{card.description}</p>
+        </div>
+        </div>
+        </div>
         </div>
     );
-    } else {
-        <h2>loading please wait</h2>
-    }
+
 }
 
 export default CardDetails;
