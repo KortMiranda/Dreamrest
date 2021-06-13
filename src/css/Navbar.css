@@ -1,16 +1,25 @@
-.nav-logo {
+.nav-logo h1{
     display: flex;
     align-items: center;
-    font-size: .85rem;
+    font-size: 1.75rem;
     padding-right: 10px;
     text-decoration: none;
-    color: var(--mainRed)
+    color: #fff;
+    font-family: 'Great Vibes', cursive;
+    font-weight: 700;
+    text-shadow: 1px 1px 0px var(--mainRed),
+                 2px 2px 0px var(--mainOrange),
+                 3px 3px 0px var(--mainYellow),
+                 4px 4px 0px var(--mainGreen),
+                 5px 5px 0px var(--mainLightBlue),
+                 6px 6px 0px var(--mainDarkerBlue),
+                 7px 7px 0px var(--mainDarkerBlue),
+                 8px 8px 0px var(--mainPink)
 }
 
-.nav-logo:hover {
-    color: var(--mainBlack);
-    background-color: var(--mainGreen);
-    border-radius: 10px;
+.nav-logo h1:hover {
+    color: var(--mainRed);
+
 }
 
 .logo {
@@ -53,31 +62,12 @@
 }
 
 .nav-links a:hover {
-    background: var(--mainGreen);
-    border-radius: 10px;
+    color: var(--mainGreen);
+    
 }
 
-.add-card-button {
-  /* display: flex;
-  align-items: cente; */
-  width: 28px;
-  /* line-height: 23px; */
-  height: 28px;
-  color: var(--mainBlack);
-  background-color: var(--mainRed);
-  border: solid 1px var(--mainBlack);
-  border-radius: 10px;
-  font-size: 20px;
-  justify-content: center;
+.plus-icon{
+    font-size:25px;
 }
 
-.add-card-button:hover {
-    background-color: transparent;
-    border-style: none;
-}
-
-/* .plus {
-    line-height: 23px;
-    font-size: 20px;
-  } */
 

@@ -1,6 +1,9 @@
 import React, { useState, useEffect } from 'react';
 
 const Login = () => {
+  // const backendURL = process.env.NODE_ENV === "production" ? 
+  // process.env.REACT_APP_BACKENDURL:
+  // "https://rocky-springs-66803.herokuapp.com"
   const [username, setUsername] = useState('');
   const [email, setEmail] = useState('');
   const [password, setPassword] = useState('');
@@ -9,7 +12,7 @@ const Login = () => {
 
   useEffect(() => {
     if (localStorage.getItem('token') !== null) {
-      window.location.replace('http://localhost:3000/');
+      window.location.replace('http://localhost:3000');
     } else {
       setLoading(false);
     }
@@ -23,10 +26,21 @@ const Login = () => {
       password: password
     };
 
-    fetch('http://127.0.0.1:8000/api/v1/users/auth/login/', {
+    // fetch(`https://rocky-springs-66803.herokuapp.com/api/v1/users/auth/login/`, {
+    //   method: 'POST',
+    //   headers: {
+    //     'Content-Type': 'application/json',
+    //     // "Access-Control-Allow-Headers": "*",
+    //     "Access-Control-Allow-Origin" : "*",
+    //     "Access-Control-Allow-Methods" : "GET,POST,PUT,DELETE,OPTIONS",
+    //     "Access-Control-Allow-Headers": "Content-Type, Access-Control-Allow-Headers, Authorization, X-Requested-With"
+    //   },
+    //   body: JSON.stringify(user)
+    // })
+    fetch(`http://localhost:8000/api/v1/users/auth/login/`, {
       method: 'POST',
       headers: {
-        'Content-Type': 'application/json'
+        'Content-Type': 'application/json',
       },
       body: JSON.stringify(user)
     })
@@ -35,7 +49,7 @@ const Login = () => {
         if (data.key) {
           localStorage.clear();
           localStorage.setItem('token', data.key);
-          window.location.replace('http://localhost:3000/');
+          window.location.replace('http://localhost:3000');
         } else {
           setEmail('');
           setPassword('');
