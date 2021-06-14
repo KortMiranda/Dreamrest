@@ -20,8 +20,8 @@ function Cards() {
             const url = "https://arcane-lowlands-63405.herokuapp.com/cards/"
             fetch(url).then(res => res.json()).then(console.log)
             .then(res => {
-                setCards(res.data)
-                console.log(res.data)
+                setCards(res)
+                console.log(res)
             })
             .catch(console.error)
         }
