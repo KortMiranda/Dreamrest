@@ -64,7 +64,7 @@ function EditForm(props) {
                     <input type="text" name="Image" value={img} onChange={e => setRef(e.target.value)} />
                     <br />
                     <button type= "submit" className="submit-button">Save</button>
-                    <Link to={`https://arcane-lowlands-63405.herokuapp.com/card/${id}`}><button>Cancel</button></Link>   
+                    <Link to={`/card/${id}`}><button>Cancel</button></Link>   
                 </form>
                 </div>
                 </div>

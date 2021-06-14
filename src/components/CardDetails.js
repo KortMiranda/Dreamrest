@@ -13,7 +13,7 @@ function CardDetails(props) {
     useEffect(() => {
         setLoading(true)
         function getCard() {
-            axios.get(`http://localhost:8000/card/${id}`)
+            axios.get(`https://arcane-lowlands-63405.herokuapp.com/card/${id}`)
             .then(res => {
                 setCards(res.data)
                 console.log(res.data)
