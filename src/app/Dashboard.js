@@ -17,7 +17,13 @@ function Cards() {
 
     useEffect(() => {
         function getCard() {
-            axios.get(`http://localhost:8000/cards`)
+            axios.get(`${process.env.REACT_APP_BACKEND_URL}/cards`, {
+            headers: {
+                // "Content-Type": "application/json",
+                "Access-Control-Allow-Origin": "*",
+                // "Access-Control-Allow-Methods": "GET, POST, PATCH, PUT, DELETE, OPTIONS",
+                // "Access-Control-Allow-Headers": "Origin, Content-Type, X-Auth-Token, Authorization, Accept,charset,boundary,Content-Length"
+            }})
             .then(res => {
                 setCards(res.data)
                 console.log(res.data)

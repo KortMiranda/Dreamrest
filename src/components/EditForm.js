@@ -30,8 +30,8 @@ function EditForm(props) {
     const handleSubmit = e => {
         e.preventDefault()
         const cardInfo = {
-            title: e.target.Title.value == "" ? title: e.target.Title.value,
-            description: e.target.Description.value == "" ? desc: e.target.Description.value,
+            title: e.target.Title.value === "" ? title: e.target.Title.value,
+            description: e.target.Description.value === "" ? desc: e.target.Description.value,
             img_url: img,
             img_ref: e.target.Image.value,
         }
