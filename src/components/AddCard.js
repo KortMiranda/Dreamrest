@@ -17,10 +17,10 @@ function AddCard(props) {
             description: desc,
             img_ref: ref,
         }
-        axios.post('http://localhost:8000/cards/', cardInfo)
+        axios.post('https://arcane-lowlands-63405.herokuapp.com/cards/', cardInfo)
         .then(res => {
             setAddCard(res.data)
-            window.location.replace('http://localhost:3000/');
+            window.location.replace('https://dreamrest.herokuapp.com/');
         })
     }
 

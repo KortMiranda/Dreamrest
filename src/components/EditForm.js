@@ -13,7 +13,7 @@ function EditForm(props) {
 
     useEffect(() => {
         function getCard() {
-            axios.get(`http://localhost:8000/card/${id}`)
+            axios.get(`https://arcane-lowlands-63405.herokuapp.com/card/${id}`)
             .then(res => {
                 setCardDetails(res.data)
                 setTitle(res.data.title)
@@ -35,11 +35,11 @@ function EditForm(props) {
             img_url: img,
             img_ref: e.target.Image.value,
         }
-        axios.put(`http://localhost:8000/card/${id}`, cardInfo)
+        axios.put(`https://arcane-lowlands-63405.herokuapp.com/card/${id}`, cardInfo)
         .then(res => {
             setCard(res.data)
             console.log(res.data)
-            window.location.replace(`http://localhost:3000/card/${id}`);
+            window.location.replace(`https://arcane-lowlands-63405.herokuapp.com/card/${id}`);
         })
         .catch(console.error)
     }
@@ -64,7 +64,7 @@ function EditForm(props) {
                     <input type="text" name="Image" value={img} onChange={e => setRef(e.target.value)} />
                     <br />
                     <button type= "submit" className="submit-button">Save</button>
-                    <Link to={`/card/${id}`}><button>Cancel</button></Link>   
+                    <Link to={`https://arcane-lowlands-63405.herokuapp.com/card/${id}`}><button>Cancel</button></Link>   
                 </form>
                 </div>
                 </div>
