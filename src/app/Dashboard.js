@@ -17,12 +17,11 @@ function Cards() {
 
     useEffect(() => {
         function getCard() {
-            const url = "https://arcane-lowlands-63405.herokuapp.com/cards/"
-            fetch(url).then(res => res.json()).then(console.log)
+            axios.get(`https://arcane-lowlands-63405.herokuapp.com/cards/`)
             .then(res => {
-                setCards(res)
-                console.log(res)
+                setCards(res.data)   
             })
+          
             .catch(console.error)
         }
         getCard()
