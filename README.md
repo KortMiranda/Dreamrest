@@ -1,70 +1,32 @@
-# Getting Started with Create React App
+# Dreamrest
 
-This project was bootstrapped with [Create React App](https://github.com/facebook/create-react-app).
+## Description
 
-## Available Scripts
+Dreamrest is inspired by Pinterest, but this app focuses on collecting images and quotes for vision boards to keep users motivated in reaching their personal goals. This repo is still a work in progress but the final plan is to make this into a fully functional social media platform that is designed to create a positive atmosphere where users can create their potential future life with “dream cards” and others can cheer them on or be inspired by them.
 
-In the project directory, you can run:
+<img width="1080" alt="Screen Shot 2021-06-14 at 2 46 00 PM" src="https://user-images.githubusercontent.com/74841038/121943190-f1860980-cd16-11eb-9a6d-bf7c4aff2d8d.png">
 
-### `npm start`
+## User Stories
 
-Runs the app in the development mode.\
-Open [http://localhost:3000](http://localhost:3000) to view it in the browser.
+* As the user, I would like to have a landing page for the app that will allow me to either sign up for a new account or log into my current account.
+* As the user, I would like to see all the dream cards of the people I follow on the home page. ( kind of done)
+* As the user, if I see a dream card that I like on the main page, I would like to click a heart button on the card to indicate I like the content, or I can add the content onto my own dream board with the save button.
+* As the user, if I find a card that I might be interested in adding onto my board, I would like to click on it from the home screen and the content to be enlarged to see the image better or view the details of the card. I should also be able to save and like the card from there if I decide to do so at that point. 
+* As the user, I would like to add comments to the cards I find if I wish to add them. 
+* As the user, I would like to upload my own images to add to my dream board to personalize my own dreams and visions of my future outcome. 
+* As the user, if I find another Dreamrest user that I really like, I would like to be able to follow them and see what content they are posting.
+* As the user, when I click on my profile picture on the nav bar, I want to be directed to a page with all the dream cards that I have collected.
+* As the user, I would like the ability to delete a dream card from my profile if I so desire to.
 
-The page will reload if you make edits.\
-You will also see any lint errors in the console.
 
-### `npm test`
+## Technologies Used
 
-Launches the test runner in the interactive watch mode.\
-See the section about [running tests](https://facebook.github.io/create-react-app/docs/running-tests) for more information.
+* React
+* Python/Django
+* React Masonry CSS 
+* Font Awesome
 
-### `npm run build`
+## Deployed App
 
-Builds the app for production to the `build` folder.\
-It correctly bundles React in production mode and optimizes the build for the best performance.
+https://dreamrest.herokuapp.com/
 
-The build is minified and the filenames include the hashes.\
-Your app is ready to be deployed!
-
-See the section about [deployment](https://facebook.github.io/create-react-app/docs/deployment) for more information.
-
-### `npm run eject`
-
-**Note: this is a one-way operation. Once you `eject`, you can’t go back!**
-
-If you aren’t satisfied with the build tool and configuration choices, you can `eject` at any time. This command will remove the single build dependency from your project.
-
-Instead, it will copy all the configuration files and the transitive dependencies (webpack, Babel, ESLint, etc) right into your project so you have full control over them. All of the commands except `eject` will still work, but they will point to the copied scripts so you can tweak them. At this point you’re on your own.
-
-You don’t have to ever use `eject`. The curated feature set is suitable for small and middle deployments, and you shouldn’t feel obligated to use this feature. However we understand that this tool wouldn’t be useful if you couldn’t customize it when you are ready for it.
-
-## Learn More
-
-You can learn more in the [Create React App documentation](https://facebook.github.io/create-react-app/docs/getting-started).
-
-To learn React, check out the [React documentation](https://reactjs.org/).
-
-### Code Splitting
-
-This section has moved here: [https://facebook.github.io/create-react-app/docs/code-splitting](https://facebook.github.io/create-react-app/docs/code-splitting)
-
-### Analyzing the Bundle Size
-
-This section has moved here: [https://facebook.github.io/create-react-app/docs/analyzing-the-bundle-size](https://facebook.github.io/create-react-app/docs/analyzing-the-bundle-size)
-
-### Making a Progressive Web App
-
-This section has moved here: [https://facebook.github.io/create-react-app/docs/making-a-progressive-web-app](https://facebook.github.io/create-react-app/docs/making-a-progressive-web-app)
-
-### Advanced Configuration
-
-This section has moved here: [https://facebook.github.io/create-react-app/docs/advanced-configuration](https://facebook.github.io/create-react-app/docs/advanced-configuration)
-
-### Deployment
-
-This section has moved here: [https://facebook.github.io/create-react-app/docs/deployment](https://facebook.github.io/create-react-app/docs/deployment)
-
-### `npm run build` fails to minify
-
-This section has moved here: [https://facebook.github.io/create-react-app/docs/troubleshooting#npm-run-build-fails-to-minify](https://facebook.github.io/create-react-app/docs/troubleshooting#npm-run-build-fails-to-minify)
