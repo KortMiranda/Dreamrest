@@ -17,7 +17,7 @@ function Cards() {
 
     useEffect(() => {
         function getCard() {
-            axios.get(`${process.env.REACT_APP_BACKEND_URL}/cards`, {
+            axios.get(`http://dreamrest-server.herokuapp.com/cards`, {
             headers: {
                 // "Content-Type": "application/json",
                 "Access-Control-Allow-Origin": "*",
