@@ -6,9 +6,9 @@ function DeleteButton(props) {
     const { id } = useParams()
     
     function handleSubmit(e) {
-        axios.delete(`http://localhost:8000/card/${id}`)
+        axios.delete(`https://arcane-lowlands-63405.herokuapp.com/cards/${id}`)
         .then(res => {
-            window.location.replace('http://localhost:3000/')
+            window.location.replace('https://dreamrest.herokuapp.com/')
         })
     }
     return (
