@@ -32,7 +32,6 @@ Dreamrest is inspired by Pinterest, but this app focuses on collecting images an
 <img width="551" alt="Screen Shot 2021-06-03 at 8 10 51 AM" src="https://user-images.githubusercontent.com/74841038/121949018-9c012b00-cd1d-11eb-9351-7c618c90bbbc.png">
 <img width="782" alt="Screen Shot 2021-06-03 at 8 11 16 AM" src="https://user-images.githubusercontent.com/74841038/121949026-9f94b200-cd1d-11eb-8ce4-2687075592c8.png">
 
-
 ## Deployed App
 
 https://dreamrest.herokuapp.com/
