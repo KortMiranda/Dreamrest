@@ -39,7 +39,7 @@ function EditForm(props) {
         .then(res => {
             setCard(res.data)
             console.log(res.data)
-            window.location.replace(`https://arcane-lowlands-63405.herokuapp.com/card/${id}`);
+            window.location.replace(`https://dreamrest.herokuapp.com/card/${id}`);
         })
         .catch(console.error)
     }
