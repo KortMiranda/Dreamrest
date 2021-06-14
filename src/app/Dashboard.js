@@ -17,8 +17,18 @@ function Cards() {
 
     useEffect(() => {
         function getCard() {
-            const url = "https://arcane-lowlands-63405.herokuapp.com/cards/"
-            fetch(url).then(res => res.json()).then(console.log)
+            axios.get(`https://arcane-lowlands-63405.herokuapp.com/cards/`, {
+            headers: {
+                // "Content-Type": "application/json",
+                "Access-Control-Allow-Origin": "*",
+                // "Access-Control-Allow-Methods": "GET, POST, PATCH, PUT, DELETE, OPTIONS",
+                // "Access-Control-Allow-Headers": "Origin, Content-Type, X-Auth-Token, Authorization, Accept,charset,boundary,Content-Length"
+            }})
+            .then(res => {
+                setCards(res.data)
+                console.log(res.data)
+            })
+            .catch(console.error)
         }
         getCard()
       
