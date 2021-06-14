@@ -22,7 +22,7 @@ Dreamrest is inspired by Pinterest, but this app focuses on collecting images an
 ## Technologies Used
 
 * React
-* Python/Django
+* Python/Django (https://github.com/KortMiranda/dreamrest-backend)
 * React Masonry CSS 
 * Font Awesome
 
