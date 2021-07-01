@@ -24,7 +24,7 @@ Dreamrest is inspired by Pinterest, but this app focuses on collecting images an
 3. Install dependencies (`<npm i>` or `<npm install>`)
 4. Run app into browser (`<npm start>`)
 
-## Contribution Guidlines
+## Contribution Guidelines
 
 This repo is still a work in progress but the final plan is to make this into a fully functional social media platform that is designed to create a positive atmosphere where users can create their potential future life with “dream cards” and others can cheer them on or be inspired by them. I plan on adding user authorization next so then other users can follow one another and and have the ability to save a card from their followers if they wish to. I have the link to my backend repo above if you would like to fork and clone that to start working on the user auth functionality. Please feel free to add anything else that you think will help this add be more successful for its users with a pull request. 
 
