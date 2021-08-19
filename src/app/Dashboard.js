@@ -1,4 +1,4 @@
-import React, { useEffect, useState, Fragment } from 'react';
+import React, { useEffect, useState } from 'react';
 import { Link } from 'react-router-dom'
 import axios from 'axios'
 import '../css/Card.css'
@@ -17,7 +17,7 @@ function Cards() {
 
     useEffect(() => {
         function getCard() {
-            axios.get(`https://arcane-lowlands-63405.herokuapp.com/cards/`)
+            axios.get(`${process.env.REACT_APP_BACKEND_URL}cards/`)
             .then(res => {
                 setCards(res.data)   
             })

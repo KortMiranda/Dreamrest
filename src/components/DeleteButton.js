@@ -6,7 +6,7 @@ function DeleteButton(props) {
     const { id } = useParams()
     
     function handleSubmit(e) {
-        axios.delete(`https://arcane-lowlands-63405.herokuapp.com/card/${id}`)
+        axios.delete(`${process.env.REACT_APP_BACKEND_URL}card/${id}`)
         .then(res => {
             window.location.replace('https://dreamrest.herokuapp.com/')
         })

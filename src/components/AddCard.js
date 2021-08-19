@@ -17,7 +17,7 @@ function AddCard(props) {
             description: desc,
             img_ref: ref,
         }
-        axios.post('https://arcane-lowlands-63405.herokuapp.com/cards/', cardInfo)
+        axios.post(`${process.env.REACT_APP_BACKEND_URL}cards/`, cardInfo)
         .then(res => {
             setAddCard(res.data)
             window.location.replace('https://dreamrest.herokuapp.com/');

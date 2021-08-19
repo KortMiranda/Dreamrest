@@ -13,7 +13,7 @@ function EditForm(props) {
 
     useEffect(() => {
         function getCard() {
-            axios.get(`https://arcane-lowlands-63405.herokuapp.com/card/${id}`)
+            axios.get(`${process.env.REACT_APP_BACKEND_URL}card/${id}`)
             .then(res => {
                 setCardDetails(res.data)
                 setTitle(res.data.title)
@@ -35,11 +35,11 @@ function EditForm(props) {
             img_url: img,
             img_ref: e.target.Image.value,
         }
-        axios.put(`https://arcane-lowlands-63405.herokuapp.com/card/${id}`, cardInfo)
+        axios.put(`${process.env.REACT_APP_BACKEND_URL}card/${id}`, cardInfo)
         .then(res => {
             setCard(res.data)
             console.log(res.data)
-            window.location.replace(`https://dreamrest.herokuapp.com/card/${id}`);
+            window.location.replace(`${process.env.REACT_APP_BACKEND_URL}card/${id}`);
         })
         .catch(console.error)
     }
