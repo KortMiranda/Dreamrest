@@ -3,7 +3,7 @@ import React, { useState, useEffect, Fragment } from 'react';
 const Logout = () => {
   const backendURL = process.env.NODE_ENV === "production" ? 
   process.env.REACT_APP_BACKENDURL:
-  "https://rocky-springs-66803.herokuapp.com"
+  "guarded-crag-20391.herokuapp.com/"
   const [loading, setLoading] = useState(true);
 
   useEffect(() => {
