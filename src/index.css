@@ -2,15 +2,13 @@
 
 :root{
   --mainFade: rgba(255,255,255,0.3);
+  --mainOffWhite: #efefef;
   --mainBlack: #222;
-  --mainPink: #ffc6ff;
-  --mainPurple: #bdb2ff;
-  --mainDarkerBlue: #a0c4ff;
-  --mainLightBlue: #9bf6ff;
-  --mainGreen: #caffbf;
-  --mainYellow: #fdffb6;
-  --mainOrange: #ffd6a5;
-  --mainRed: #ffadad;
+  --mainLightBrown: #a4816d;
+  --mainDarkBrown: #613b34;
+  --mainRed: #93251c;
+  --mainRedOrange: #dd552f;
+  --mainOrange: #eaa23c;
   --mainSpacing: 0.3rem;
   --lightShadow: 2px 5px 3px 0px rgba(0, 0, 0, 0.5);
   --darkShadow: 4px 10px 5px 0px rgba(0, 0, 0, 0.5);
@@ -26,7 +24,7 @@
 
 body{
   color: var(--mainBlack);
-  background: #fff;
+  background: var(--mainOffWhite);
   background-repeat: no-repeat;
   background-attachment: fixed;
   height: 100vh;
@@ -39,21 +37,18 @@ h1, h2, h3, h4{
 
 h3 {
   font-weight: 500;
-  color: #fff;
   opacity: 0.8;
   font-size: 1.4rem;
   margin-top: 0;
   margin-bottom: 20px;
-  text-shadow:2px 2px 4px rgba(0,0,0,0.5);}
+  }
 
 h4 {
   font-weight: 500;
-  color: #fff;
   opacity: 0.8;
   font-size: .88rem;
   margin-top: 0;
   margin-bottom: 20px;
-  text-shadow:2px 2px 4px rgba(0,0,0,0.5);
 }
 
 a {
@@ -84,15 +79,11 @@ a {
 }
 
 .add-form {
-  background:var(--mainFade);
+  background:#fff;
   padding: 3em;
   width: 350px;
   height: 400px;
   border-radius: 20px;
-  border-left:1px solid var(--mainFade);
-  border-top: 1px solid var(--mainFade);
-  backdrop-filter:blur(10px);
-  box-shadow: 20px 20px 40px -6px rgba(0,0,0,0.2);
   text-align: center;
   position: relative;
   transition: all 0.2 ease-in-out;
@@ -104,21 +95,7 @@ input {
   padding: 1em;
   margin-bottom: 1em;
   border: none;
-  border-left: 1px solid var(--mainFade);
-  border-top: 1px solid var(--mainFade);
-  border-radius: 5000px;
-  backdrop-filter: blur(5px);
-  box-shadow: 4px 4px 60px rgba(0, 0, 0, 0.2);
-}
-
-input:hover {
-  background: rgba(255,255,255,0.1);
-  box-shadow: 4px 4px 60px 8px rgba(0,0,0,0.2);
-}
-
-[type="text"]:focus{
-  background: rgba(255,255,255,0.1);
-  box-shadow: 4px 4px 60px 8px rgba(0,0,0,0.2);
+  border-bottom: solid 1px;
 }
 
 button {

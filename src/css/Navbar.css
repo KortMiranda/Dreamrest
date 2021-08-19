@@ -4,21 +4,19 @@
     font-size: 1.75rem;
     padding-right: 10px;
     text-decoration: none;
-    color: #fff;
+    color: var(--mainBlack);
     font-family: 'Great Vibes', cursive;
     font-weight: 700;
-    text-shadow: 1px 1px 0px var(--mainRed),
-                 2px 2px 0px var(--mainOrange),
-                 3px 3px 0px var(--mainYellow),
-                 4px 4px 0px var(--mainGreen),
-                 5px 5px 0px var(--mainLightBlue),
-                 6px 6px 0px var(--mainDarkerBlue),
-                 7px 7px 0px var(--mainDarkerBlue),
-                 8px 8px 0px var(--mainPink)
+    text-shadow: 1px 1px 0px var(--mainOrange),
+                 2px 2px 0px var(--mainRedOrange),
+                 3px 3px 0px var(--mainRed),
+                 4px 4px 0px var(--mainDarkBrown),
+                 5px 5px 0px var(--mainLightBrown);
+            
 }
 
 .nav-logo h1:hover {
-    color: var(--mainRed);
+    color: var(--mainRedOrange);
 
 }
 
@@ -62,7 +60,7 @@
 }
 
 .nav-links a:hover {
-    color: var(--mainGreen);
+    color: var(--mainLightBrown);
     
 }
 
