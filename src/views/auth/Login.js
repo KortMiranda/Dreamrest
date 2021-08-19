@@ -3,7 +3,7 @@ import React, { useState, useEffect } from 'react';
 const Login = () => {
   const backendURL = process.env.NODE_ENV === "production" ? 
   process.env.REACT_APP_BACKENDURL:
-  "https://rocky-springs-66803.herokuapp.com"
+  "https://guarded-crag-20391.herokuapp.com/"
   const [username, setUsername] = useState('');
   const [email, setEmail] = useState('');
   const [password, setPassword] = useState('');
@@ -12,7 +12,7 @@ const Login = () => {
 
   useEffect(() => {
     if (localStorage.getItem('token') !== null) {
-      window.location.replace('http://localhost:3000');
+      window.location.replace('https://dreamrest.herokuapp.com/');
     } else {
       setLoading(false);
     }
@@ -37,7 +37,7 @@ const Login = () => {
     //   },
     //   body: JSON.stringify(user)
     // })
-    fetch(`http://localhost:8000/api/v1/users/auth/login/`, {
+    fetch(`${process.env.REACT_APP_BACKEND_URL}api/v1/users/auth/login/`, {
       method: 'POST',
       headers: {
         'Content-Type': 'application/json',
@@ -49,7 +49,7 @@ const Login = () => {
         if (data.key) {
           localStorage.clear();
           localStorage.setItem('token', data.key);
-          window.location.replace('http://localhost:3000');
+          window.location.replace('https://dreamrest.herokuapp.com/');
         } else {
           setEmail('');
           setPassword('');
