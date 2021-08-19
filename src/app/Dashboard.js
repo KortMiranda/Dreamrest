@@ -6,6 +6,9 @@ import Masonry from 'react-masonry-css'
 
 
 function Cards() {
+    const backendURL = process.env.NODE_ENV === "production" ? 
+  process.env.REACT_APP_BACKEND_URL:
+  "https://guarded-crag-20391.herokuapp.com/"
     const [cards, setCards] = useState([])
 
     const breakpointCols = {
@@ -14,10 +17,10 @@ function Cards() {
       700: 2,
       500: 1
     }
-
+    
     useEffect(() => {
         function getCard() {
-            axios.get(`${process.env.REACT_APP_BACKEND_URL}cards/`)
+            axios.get(`${backendURL}cards/`)
             .then(res => {
                 setCards(res.data)   
             })
