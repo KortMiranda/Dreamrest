@@ -1,14 +1,15 @@
 import React, { useEffect, useState } from 'react';
 import { Link } from 'react-router-dom'
+import Navbar from '../components/Navbar';
 import axios from 'axios'
 import '../css/Card.css'
 import Masonry from 'react-masonry-css'
 
 
 function Cards() {
-    const backendURL = process.env.NODE_ENV === "production" ? 
-  process.env.REACT_APP_BACKEND_URL:
-  "https://guarded-crag-20391.herokuapp.com/"
+//     const backendURL = process.env.NODE_ENV === "production" ? 
+//   process.env.REACT_APP_BACKEND_URL:
+//   "https://guarded-crag-20391.herokuapp.com/"
     const [cards, setCards] = useState([])
 
     const breakpointCols = {
@@ -20,7 +21,7 @@ function Cards() {
     
     useEffect(() => {
         function getCard() {
-            axios.get(`${backendURL}cards/`)
+            axios.get(`http://localhost:8000/cards`)
             .then(res => {
                 setCards(res.data)   
             })
@@ -30,8 +31,9 @@ function Cards() {
         getCard()
       
     }, [])
+    
     return (
-        <div className="card-container">
+      <div className="card-container">
         <Masonry
             breakpointCols={breakpointCols}
             className="my-masonry-grid"
