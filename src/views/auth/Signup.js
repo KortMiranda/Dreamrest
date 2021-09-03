@@ -40,7 +40,7 @@ const Signup = () => {
         if (data.key) {
           localStorage.clear();
           localStorage.setItem('token', data.key);
-          window.location.replace('http://localhost:3000/');
+          window.location.replace('http://localhost:3000/dashboard');
         } else {
           setEmail('');
           setPassword1('');
@@ -56,15 +56,6 @@ const Signup = () => {
       {loading === false && <h1>Signup</h1>}
       {errors === true && <h2>Cannot signup with provided credentials</h2>}
       <form onSubmit={onSubmit}>
-        <label htmlFor='email'>Username:</label> <br />
-        <input
-          name='username'
-          type='username'
-          value={username}
-          onChange={e => setUsername(e.target.value)}
-          required
-        />{' '}
-        <br />
         <label htmlFor='email'>Email address:</label> <br />
         <input
           name='email'
