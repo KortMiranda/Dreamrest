@@ -1,9 +1,9 @@
 import React, { useState, useEffect, Fragment } from 'react';
 
 const Logout = () => {
-  const backendURL = process.env.NODE_ENV === "production" ? 
-  process.env.REACT_APP_BACKENDURL:
-  "guarded-crag-20391.herokuapp.com/"
+  // const backendURL = process.env.NODE_ENV === "production" ? 
+  // process.env.REACT_APP_BACKENDURL:
+  // "guarded-crag-20391.herokuapp.com/"
   const [loading, setLoading] = useState(true);
 
   useEffect(() => {
@@ -17,7 +17,7 @@ const Logout = () => {
   const handleLogout = e => {
     e.preventDefault();
 
-    fetch(`${backendURL}/api/v1/users/auth/logout/`, {
+    fetch(`http://localhost:8000/api/v1/users/auth/logout/`, {
       method: 'POST',
       headers: {
         'Content-Type': 'application/json',
@@ -28,7 +28,7 @@ const Logout = () => {
       .then(data => {
         console.log(data);
         localStorage.clear();
-        window.location.replace(`${backendURL}/login`);
+        window.location.replace(`http://localhost:3000/login`);
       });
   };
 

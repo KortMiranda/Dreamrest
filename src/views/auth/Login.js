@@ -1,10 +1,9 @@
 import React, { useState, useEffect } from 'react';
 
 const Login = () => {
-  const backendURL = process.env.NODE_ENV === "production" ? 
-  process.env.REACT_APP_BACKENDURL:
-  "https://guarded-crag-20391.herokuapp.com/"
-  const [username, setUsername] = useState('');
+  // const backendURL = process.env.NODE_ENV === "production" ? 
+  // process.env.REACT_APP_BACKENDURL:
+  // "https://guarded-crag-20391.herokuapp.com/"
   const [email, setEmail] = useState('');
   const [password, setPassword] = useState('');
   const [errors, setErrors] = useState(false);
@@ -12,7 +11,7 @@ const Login = () => {
 
   useEffect(() => {
     if (localStorage.getItem('token') !== null) {
-      window.location.replace('https://dreamrest.herokuapp.com/');
+      window.location.replace('http://localhost:3000/dashboard');
     } else {
       setLoading(false);
     }
@@ -37,10 +36,10 @@ const Login = () => {
     //   },
     //   body: JSON.stringify(user)
     // })
-    fetch(`${process.env.REACT_APP_BACKEND_URL}api/v1/users/auth/login/`, {
+    fetch(`http://localhost:8000/api/v1/users/auth/login/`, {
       method: 'POST',
       headers: {
-        'Content-Type': 'application/json',
+        'Content-Type': 'application/json',        
       },
       body: JSON.stringify(user)
     })
@@ -49,7 +48,7 @@ const Login = () => {
         if (data.key) {
           localStorage.clear();
           localStorage.setItem('token', data.key);
-          window.location.replace('https://dreamrest.herokuapp.com/');
+          window.location.replace('http://localhost:3000/dashboard');
         } else {
           setEmail('');
           setPassword('');
@@ -65,15 +64,6 @@ const Login = () => {
       {errors === true && <h2>Cannot log in with provided credentials</h2>}
       {loading === false && (
         <form onSubmit={onSubmit}>
-          <label htmlFor='email'>Username:</label> <br />
-          <input
-            name='username'
-            type='username'
-            value={username}
-            required
-            onChange={e => setUsername(e.target.value)}
-          />{' '}
-          <br />
           <label htmlFor='email'>Email address:</label> <br />
           <input
             name='email'
